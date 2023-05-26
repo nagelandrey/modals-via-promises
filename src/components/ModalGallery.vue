@@ -1,5 +1,5 @@
 <template>
-  <BaseModal :name="ModalNames.Gallery" :z-index="zIndex">
+  <BaseModal :name="ModalNames.Gallery">
     <BaseButton @click="close">gallery action</BaseButton>
   </BaseModal>
 </template>
@@ -9,17 +9,12 @@
   import { ModalNames } from '../models/ModalNames'
   import { useModalsStore } from '../stores/modals'
   import BaseButton from './BaseButton.vue'
-  import { computed } from 'vue'
   import { GalleryModalResponse } from '../models/GalleryModalResponse'
 
-  const modalStore = useModalsStore()
-
-  const zIndex = computed(
-    () => modalStore.getModalData(ModalNames.Gallery)?.zIndex
-  )
+  const modalsStore = useModalsStore()
 
   const close = () => {
-    modalStore.closeModalWithResponse(ModalNames.Gallery, {
+    modalsStore.closeModalWithResponse(ModalNames.Gallery, {
       response: { a: 1, b: '2' } as GalleryModalResponse,
     })
   }
