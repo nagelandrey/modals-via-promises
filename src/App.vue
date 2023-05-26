@@ -6,16 +6,16 @@
   import BaseButton from './components/BaseButton.vue'
   import { GalleryModalResponse } from './models/GalleryModalResponse'
 
-  const modalStore = useModalsStore()
+  const modalsStore = useModalsStore()
 
   const openConfirm = async () => {
-    const response = await modalStore.open(ModalNames.Confirm)
+    const response = await modalsStore.open(ModalNames.Confirm)
 
     console.log('result confirm', response)
   }
 
   const openGallery = async () => {
-    const response = await modalStore.open(ModalNames.Gallery)
+    const response = await modalsStore.open(ModalNames.Gallery)
 
     const data = response?.response as GalleryModalResponse
 
