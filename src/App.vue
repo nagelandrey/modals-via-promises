@@ -24,7 +24,7 @@
 </script>
 
 <template>
-  <div class="flex flex-col gap-3 items-start justify-start p-3">
+  <div class="flex flex-col items-start justify-start gap-3 p-3">
     <BaseButton @click="openGallery"> Gallery </BaseButton>
     <BaseButton @click="openConfirm"> Confirm </BaseButton>
   </div>

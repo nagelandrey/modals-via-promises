@@ -3,19 +3,19 @@
     <Transition name="modal-fade">
       <div
         v-if="modalsStore.isModalOpen(name)"
-        class="fixed top-0 left-0 w-screen h-screen bg-[rgba(0,0,0,0.32)] backdrop-opacity-90 flex items-center justify-center z-30"
+        class="fixed left-0 top-0 z-30 flex h-screen w-screen items-center justify-center bg-[rgba(0,0,0,0.32)] backdrop-opacity-90"
         :style="{ zIndex: zIndex }"
       >
         <div
-          class="flex flex-col justify-start items-stretch w-96 h-96 border border-dark bg-white rounded-xl shadow-xl"
+          class="flex h-96 w-96 flex-col items-stretch justify-start rounded-xl border border-dark bg-white shadow-xl"
         >
-          <div class="p-4 border-b border-lightGrey">
+          <div class="border-b border-lightGrey p-4">
             <BaseButton @click="close">close</BaseButton>
           </div>
           <div class="p-4">
             <slot />
           </div>
-          <div class="p-4 border-t border-lightGrey mt-auto">footer</div>
+          <div class="mt-auto border-t border-lightGrey p-4">footer</div>
         </div>
       </div>
     </Transition>
